@@ -28,7 +28,7 @@ app.on('ready', () => {
     win.show()
   })
 
-  win.loadURL(`file://${__dirname}/src/createuser/index.html`)
+  win.loadURL(`file://${__dirname}/src/login/index.html`)
 
   win.on('closed', () => {
     win = null

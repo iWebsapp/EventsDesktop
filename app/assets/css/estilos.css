@@ -4,7 +4,8 @@
 }
 
 .bodyLogin{
-  background: red;
+  background-image: url('../img/wallpeper.png');
+  background-size: contain;
 }
 
 .submenu{
