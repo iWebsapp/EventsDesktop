@@ -10,7 +10,11 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.on('before-quit', () => {
+  console.log('before-quit')
+})
 
+app.on('window-all-closed', () => {
+  app.quit()
 })
 
 app.on('ready', () => {
@@ -26,6 +30,10 @@ app.on('ready', () => {
 
   win.once('ready-to-show', () => {
     win.show()
+  })
+
+  win.on('hide', () => {
+    win.hide()
   })
 
   win.loadURL(`file://${__dirname}/src/login/index.html`)

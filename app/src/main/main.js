@@ -7,12 +7,12 @@ const app = require('electron').remote
 const dialog = app.dialog
 
 window.addEventListener('load', () => {
-  login()
+  logout()
 })
 
 
-function login(){
-  document.getElementById('btnLogin').addEventListener('click', function(){
+function logout(){
+  document.getElementById('btnLogout').addEventListener('click', function(){
 
     const BrowserWindow = remote.BrowserWindow
     const winchild = new BrowserWindow({
