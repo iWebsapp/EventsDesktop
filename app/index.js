@@ -14,10 +14,10 @@ app.on('before-quit', () => {
 })
 
 app.on('ready', () => {
+
   win = new BrowserWindow({
-    width: 300,
-    height: 400,
-    title: 'hola mundo',
+    width: 770,
+    height: 500,
     maximizable: true,
     show: false
   })
@@ -34,4 +34,5 @@ app.on('ready', () => {
     win = null
     app.quit()
   })
+
 })

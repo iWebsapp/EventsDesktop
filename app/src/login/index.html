@@ -14,34 +14,53 @@
         <div class="pane-group">
           <div class="pane">
 
-
-            <form class="login">
-              <div class="login-img">
-                <img src="../../assets/img/logo.png" alt="">
+            <div class="peers ai-s fxw-nw h-100vh">
+              <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv" style="background-image:url(../../assets/img/bg.jpg)">
+                <div class="pos-a centerXY">
+                  <div class="bgc-white bdrs-50p pos-r" style="width:120px;height:120px">
+                    <img class="pos-a centerXY" src="../../assets/img/logo.png" alt="">
+                  </div>
+                </div>
               </div>
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Correo electronico">
+              <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
+                <h4 class="fw-300 c-grey-900 mB-40">Inicia sesión</h4>
+                <form>
+                  <div class="form-group">
+                    <label class="text-normal text-dark">Correo eletrónico</label>
+                    <input type="email" class="form-control" placeholder="Correo eletrónico">
+                  </div>
+                  <div class="form-group">
+                    <label class="text-normal text-dark">Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Contraseña">
+                  </div>
+                  <div class="form-group">
+                    <div class="peers ai-c jc-sb fxw-nw">
+                      <div class="peer">
+                        <div class="peers ai-c">
+                          <label for="inputCall1" class="peers peer-greed js-sb ai-c">
+                            <input type="checkbox" class="checkboxItem">
+                            <span class="peer peer-greed">Recordarme</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="peer">
+                        <div id="btnLogin" class="btn btn-primary">Entrar</div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="Contraseña">
-              </div>
-              <div class="btn-group">
-                <button type="submit" class="btn btn-form btn-positive med">Crear cuenta</button>
-                <button type="submit" class="btn btn-form btn-primary med">Ingresar</button>
-              </div>
-              <div class="btn-group">
-                <button type="submit" class="btn btn-form btn-default full">Recuperar contraseña</button>
-              </div>
-            </form>
-
+            </div>
 
           </div>
         </div>
       </div>
-      <footer class="toolbar toolbar-footer">
-        <h1 class="title footer">Footer</h1>
-      </footer>
     </div>
+
+
+    <script type="text/javascript" src="../../assets/js/vendor.js"></script>
+    <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+    <script type="text/javascript" src="./login.js"></script>
 
   </body>
 </html>
