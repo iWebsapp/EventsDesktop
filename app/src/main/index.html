@@ -5,6 +5,7 @@
     <title>Event</title>
     <link rel="stylesheet" href="../../assets/css/photon.min.css">
     <link rel="stylesheet" href="../../assets/css/estilos.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
   </head>
   <body>
 
@@ -26,7 +27,7 @@
                 <!-- ### $App Screen Content ### -->
                 <main class='main-content bgc-grey-100'>
                   <div id='mainContent'>
-                    <div class="full-container">
+                    <div class="full-container padding-container">
 
                       <div ng-view></div>
 
@@ -35,7 +36,7 @@
                 </main>
 
                 <!-- ### $App Screen Footer ### -->
-                <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600" ng-include="'../layout/footer/index.html'"></footer>
+                <div ng-include="'../layout/footer/index.html'"></div>
               </div>
             </div>
 

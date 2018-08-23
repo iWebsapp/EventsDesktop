@@ -77,6 +77,7 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 		console.log('all noti')
 	}
 	$scope.btnLogout = function(){
+
 		const { remote } = require('electron')
 		const currentWin = remote.getCurrentWindow()
     const browserWindow = remote.BrowserWindow
@@ -97,6 +98,7 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 		mainchild.loadURL(`file://${path.join(__dirname, '..')}/login/index.html`)
 
 	}
+	
 })
 
 eventApp.controller('headerCtrl', function($scope) {
