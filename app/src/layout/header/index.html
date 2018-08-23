@@ -15,8 +15,8 @@
           </li>
           <li>
             <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
-              <li>
-                <a class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+              <li ng-controller="menuCtrl">
+                <a ng-click="btnShowNoti(1)" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
                   <div class="peer mR-15">
                     <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
                   </div>
@@ -33,7 +33,7 @@
                 </a>
               </li>
               <li>
-                <a class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                <a ng-click="btnShowNoti(2)" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
                   <div class="peer mR-15">
                     <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
                   </div>
@@ -50,7 +50,7 @@
                 </a>
               </li>
               <li>
-                <a class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                <a ng-click="btnShowNoti(3)" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
                   <div class="peer mR-15">
                     <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
                   </div>
@@ -70,7 +70,7 @@
           </li>
           <li class="pX-20 pY-15 ta-c bdT">
             <span>
-              <a class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+              <a ng-click="btnAllNoti()" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
             </span>
           </li>
         </ul>
@@ -84,22 +84,22 @@
             <span class="fsz-sm c-grey-900">John Doe</span>
           </div>
         </a>
-        <ul class="dropdown-menu fsz-sm">
+        <ul class="dropdown-menu fsz-sm" ng-controller="menuCtrl">
           <li>
-            <a href="#/settings" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+            <a ng-click="btnSettings()" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
               <i class="ti-settings mR-10"></i>
               <span>Setting</span>
             </a>
           </li>
           <li>
-            <a href="#/profile" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+            <a ng-click="btnProfile()" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
               <i class="ti-user mR-10"></i>
               <span>Profile</span>
             </a>
           </li>
           <li role="separator" class="divider"></li>
           <li>
-            <a id="btnLogout" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+            <a ng-click="btnLogout()" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
               <i class="ti-power-off mR-10"></i>
               <span>Logout</span>
             </a>
@@ -108,3 +108,5 @@
       </li>
     </ul>
   </div>
+
+  <script type="text/javascript" src="./main.js"></script>

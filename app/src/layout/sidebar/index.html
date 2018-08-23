@@ -1,9 +1,9 @@
-<div class="sidebar-inner">
+<div class="sidebar-inner" ng-controller="menuCtrl">
   <!-- ### $Sidebar Header ### -->
   <div class="sidebar-logo">
     <div class="peers ai-c fxw-nw">
       <div class="peer peer-greed">
-        <a class="sidebar-link td-n" href="./">
+        <a class="sidebar-link td-n" ng-click="btnHome()">
           <div class="peers ai-c fxw-nw">
             <div class="peer">
               <div class="logo">
@@ -17,11 +17,11 @@
         </a>
       </div>
       <div class="peer">
-        <div class="mobile-toggle sidebar-toggle">
+        <!-- <div class="mobile-toggle sidebar-toggle">
           <a href="./" class="td-n">
             <i class="ti-arrow-circle-left"></i>
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
   <!-- ### $Sidebar Menu ### -->
   <ul class="sidebar-menu scrollable pos-r">
     <li class="nav-item mT-30 active">
-      <a class="sidebar-link" href="#/">
+      <a class="sidebar-link" ng-click="btnHome()">
         <span class="icon-holder">
           <i class="c-blue-500 ti-home"></i>
         </span>
@@ -37,7 +37,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class='sidebar-link' href="#/myevents">
+      <a class='sidebar-link' ng-click="btnMyevents()">
         <span class="icon-holder">
           <i class="c-brown-500 ti-email"></i>
         </span>
@@ -45,7 +45,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class='sidebar-link' href="#/favorites">
+      <a class='sidebar-link' ng-click="btnFavorites()">
         <span class="icon-holder">
           <i class="c-blue-500 ti-share"></i>
         </span>
@@ -53,7 +53,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class='sidebar-link' href="#/map">
+      <a class='sidebar-link' ng-click="btnMap()">
         <span class="icon-holder">
           <i class="c-deep-orange-500 ti-calendar"></i>
         </span>
