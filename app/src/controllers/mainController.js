@@ -1,3 +1,5 @@
+import path from 'path'
+
 var eventApp = angular.module('eventApp', ['ngRoute'])
 
 eventApp.config(function($routeProvider) {
@@ -56,9 +58,6 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 	$scope.btnSettings = function(){
 		$location.path('/settings')
 	}
-	$scope.btnLogout = function(){
-		console.log('logout')
-	}
 	$scope.btnHome = function(){
 		$location.path('/')
 	}
@@ -76,6 +75,27 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 	}
 	$scope.btnAllNoti = function(){
 		console.log('all noti')
+	}
+	$scope.btnLogout = function(){
+		const { remote } = require('electron')
+		const currentWin = remote.getCurrentWindow()
+    const browserWindow = remote.BrowserWindow
+    const mainchild = new browserWindow({
+      width: 770,
+      height: 500,
+      maximizable: true,
+      show: false
+    })
+
+		currentWin.hide()
+
+    mainchild.once('ready-to-show', () => {
+      mainchild.show()
+      mainchild.focus()
+    })
+
+		mainchild.loadURL(`file://${path.join(__dirname, '..')}/login/index.html`)
+
 	}
 })
 
