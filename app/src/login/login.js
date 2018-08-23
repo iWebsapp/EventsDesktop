@@ -5,6 +5,8 @@ import path from 'path'
 const { remote } = require('electron')
 const app = require('electron').remote
 const dialog = app.dialog
+var BrowserWindow = ''
+var loginchild = ''
 
 window.addEventListener('load', () => {
   login()
@@ -14,8 +16,8 @@ window.addEventListener('load', () => {
 function login(){
   document.getElementById('btnLogin').addEventListener('click', function(){
 
-    const BrowserWindow = remote.BrowserWindow
-    const winchild = new BrowserWindow({
+    BrowserWindow = remote.BrowserWindow
+    loginchild = new BrowserWindow({
       width: 1200,
       height: 700,
       maximizable: true,
@@ -23,12 +25,12 @@ function login(){
       show: false
     })
 
-    winchild.once('ready-to-show', () => {
-      winchild.show()
-      winchild.focus()
+    loginchild.once('ready-to-show', () => {
+      loginchild.show()
+      loginchild.focus()
     })
 
-    winchild.loadURL(`file://${path.join(__dirname, '..')}/main/index.html`)
+    loginchild.loadURL(`file://${path.join(__dirname, '..')}/main/index.html`)
 
   })
 }
