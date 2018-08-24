@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../assets/css/estilos.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
 
     <div class="window">
       <div class="window-content">
@@ -18,7 +18,7 @@
 
             <!-- @App Content -->
             <!-- =================================================== -->
-            <div>
+            <div ng-if="login">
               <div class="sidebar" ng-include="'../layout/sidebar/index.html'"></div>
               <div class="page-container" ng-include="'../layout/header/index.html'"></div>
               <div id='mainContent'>
@@ -28,6 +28,7 @@
               </div>
             </div>
 
+            <div ng-if="!login" ng-view></div>
 
 
 

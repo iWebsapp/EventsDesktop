@@ -33,9 +33,14 @@ eventApp.config(function($routeProvider) {
 	})
 })
 
-eventApp.controller('mainCtrl', function($scope) {
-	console.log('main')
-})
+eventApp.controller('mainCtrl', ['$scope', '$location', 'config', function($scope, $location, config) {
+	if( config.storage() == undefined || config.storage() == '' ){
+		$scope.login = false
+	} else {
+		$scope.login = true
+	}
+	console.log( $scope.login )
+}])
 
 eventApp.controller('homeCtrl', function($scope) {
 	console.log('home')
@@ -107,7 +112,7 @@ eventApp.controller('menuCtrl', ['$scope', '$location', 'config', function($scop
       mainchild.focus()
     })
 
-		mainchild.loadURL(`file://${path.join(__dirname, '..')}/login/index.html`)
+		mainchild.loadURL(`file://${path.join(__dirname, '..')}/main/index.html`)
 
 	}
 
