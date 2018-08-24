@@ -2,21 +2,20 @@ var eventApp = angular.module('ServicesApi', []);
 
 eventApp.service('restApi', ['$http', 'config', function ($http, config) {
     this.call = function (conf) {
-        var headers = {};
-        headers[config.token_name()] = config.getToken();
+        var headers = {}
+        headers[config.token_name()] = config.storage()
+        const urlg = config.urlGobal() + conf.url
 
         var http_conf = {
             method: conf.method,
-            url: config.urlGobal() + conf.url,
+            url: urlg,
             data: typeof (conf.data) === 'undefined' ? null : conf.data,
             headers: headers
         };
 
         $http(http_conf).then(function successCallback(response) {
-
-            conf.response(response.data);
+            conf.response(response.data)
         }, function errorCallback(response) {
-
 
             switch (response.status) {
                 case 401: // No autorizado
@@ -30,6 +29,7 @@ eventApp.service('restApi', ['$http', 'config', function ($http, config) {
                     console.log(response.statusText);
                     break;
             }
-        });
-    };
+
+        })
+    }
 }])

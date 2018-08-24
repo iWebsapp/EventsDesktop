@@ -6,7 +6,7 @@ eventApp.factory('config', ['$location', function($location) {
 			return process.env.TOKEN_NAME || 'Authentication'
 		},
 		urlGobal: function(){
-			return process.env.LINK_API || 'localhost:2715/api/v1/'
+			return process.env.LINK_API || 'http://192.168.0.111:2715/api/v1/'
 		},
 		name_app: function(){
 			return process.env.NAME || 'EventApi'

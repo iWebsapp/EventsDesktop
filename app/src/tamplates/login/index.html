@@ -8,14 +8,14 @@
   </div>
   <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
     <h4 class="fw-300 c-grey-900 mB-40">Inicia sesión</h4>
-    <form>
+    <form role="form" name="formLogin">
       <div class="form-group">
         <label class="text-normal text-dark">Correo eletrónico</label>
-        <input type="email" class="form-control" placeholder="Correo eletrónico">
+        <input type="email" class="form-control" placeholder="Correo eletrónico" ng-model="login.email" required>
       </div>
       <div class="form-group">
         <label class="text-normal text-dark">Contraseña</label>
-        <input type="password" class="form-control" placeholder="Contraseña">
+        <input type="password" class="form-control" placeholder="Contraseña"  ng-model="login.password" required minlength="8">
       </div>
       <div class="form-group">
         <div class="peers ai-c jc-sb fxw-nw">
@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="peer">
-            <div  ng-click="login()" class="btn btn-primary">Entrar</div>
+            <button ng-disabled="formLogin.$invalid" ng-click="login()" class="btn btn-primary">Entrar</button>
           </div>
         </div>
       </div>
