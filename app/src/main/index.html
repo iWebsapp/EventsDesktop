@@ -19,24 +19,12 @@
             <!-- @App Content -->
             <!-- =================================================== -->
             <div>
-              <!-- #Left Sidebar ==================== -->
               <div class="sidebar" ng-include="'../layout/sidebar/index.html'"></div>
-              <!-- #Main ============================ -->
               <div class="page-container" ng-include="'../layout/header/index.html'"></div>
-
-                <!-- ### $App Screen Content ### -->
-                <main class='main-content bgc-grey-100'>
-                  <div id='mainContent'>
-                    <div class="full-container padding-container">
-
-                      <div ng-view></div>
-
-                    </div>
-                  </div>
-                </main>
-
-                <!-- ### $App Screen Footer ### -->
-                <div ng-include="'../layout/footer/index.html'"></div>
+              <div id='mainContent'>
+                 <div class="full-container padding-container">
+                    <div class="padding-ng-view" ng-view></div>
+                 </div>
               </div>
             </div>
 
@@ -52,6 +40,7 @@
   	<script src="https://code.angularjs.org/1.6.4/angular-route.min.js"></script>
     <script type="text/javascript" src="../../assets/js/vendor.js"></script>
     <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+    <script type="text/javascript" src="../controllers/app.js"></script>
     <script type="text/javascript" src="../controllers/mainController.js"></script>
   </body>
 </html>

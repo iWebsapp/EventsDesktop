@@ -1,1 +1,88 @@
-<h2>Settings</h2>
+<h2>Ajustes</h2>
+<div class="row">
+  <div class="col-md-4">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+  <div class="col-md-8">
+      <div class="row gap-20 masonry pos-r">
+
+      <div class="masonry-sizer col-md-6"></div>
+
+      <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+          <h6 class="c-grey-900">Cambia tu correo electrónico</h6>
+          <div class="mT-30">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">luis_xp_lg@hotmail.com</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nuevo correo electrónico">
+                <small id="emailInvalid" class="form-text text-muted errorForm">Este no es un correo electrónico valido</small>
+                <small id="emailExist" class="form-text text-muted errorForm">Este correo electrónico ya tiene una cuenta con nosotros</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Cambiar correo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+          <h6 class="c-grey-900">Cambia tu contraseña</h6>
+          <div class="mT-30">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Contraseña actual</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contraseña actual">
+                <small id="passwordInvalid" class="form-text text-muted errorForm">Tu contraseña debe tener mas de 8 digitos</small>
+                <small id="passwordExist" class="form-text text-muted errorForm">Esta contraseña no coincide con la actual</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nueva contraseña actual</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nueva contraseña actual">
+                <small id="passwordRepeatInvalid" class="form-text text-muted errorForm">Tu contraseña debe tener mas de 8 digitos</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Cambiar contraseña</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+          <h6 class="c-grey-900">Cambia tu fecha de necimiento</h6>
+          <div class="mT-30">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">19/10/1993</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nueva fecha de nacimiento">
+                <small id="dateInvalid" class="form-text text-muted errorForm">Esta fecha es valida</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Cambiar fecha de nacimiento</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+          <h6 class="c-grey-900">Adminstrar formas de pago</h6>
+          <div class="mT-30">
+            <form>
+              <div class="form-group">
+                <p>Aqui puedes agregar tus tarjetas para poder comprar en los diferentes establecimientos permitidos.</p>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Administrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div ng-include="'../layout/footer/index.html'"></div>

@@ -21,6 +21,9 @@ eventApp.config(function($routeProvider) {
 	}).when('/settings', {
 		templateUrl: `../tamplates/settings/index.html`, //settings
 		controller: 'settingsCtrl'
+	}).when('/noti', {
+		templateUrl: `../tamplates/noti/index.html`, //settings
+		controller: 'notfiCtrl'
 	}).otherwise({
 		templateUrl: `../tamplates/err404/index.html`, //err404
 		controller: 'err404Ctrl'
@@ -71,9 +74,11 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 		$location.path('/map')
 	}
 	$scope.btnShowNoti = function(num){
+		$location.path('/noti')
 		console.log('show this noti: ', num)
 	}
 	$scope.btnAllNoti = function(){
+		$location.path('/noti')
 		console.log('all noti')
 	}
 	$scope.btnLogout = function(){
@@ -98,7 +103,7 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 		mainchild.loadURL(`file://${path.join(__dirname, '..')}/login/index.html`)
 
 	}
-	
+
 })
 
 eventApp.controller('headerCtrl', function($scope) {
@@ -115,4 +120,8 @@ eventApp.controller('err404Ctrl', function($scope) {
 
 eventApp.controller('loginCtrl', function($scope) {
 	console.log('login')
+})
+
+eventApp.controller('notfiCtrl', function($scope) {
+	console.log('notfiCtrl')
 })
