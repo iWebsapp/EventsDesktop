@@ -45,7 +45,7 @@ app.on('ready', () => {
     win.show()
   })
 
-  win.loadURL(`file://${__dirname}/src/login/index.html`)
+  win.loadURL(`file://${__dirname}/src/main/index.html`)
 
   win.on('closed', () => {
     win = null

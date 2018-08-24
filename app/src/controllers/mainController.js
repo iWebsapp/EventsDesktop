@@ -1,11 +1,14 @@
 import path from 'path'
-
+const { remote } = require('electron')
 var eventApp = angular.module('eventApp', ['ngRoute'])
 
 eventApp.config(function($routeProvider) {
 	$routeProvider.when('/', {
+		templateUrl: `../tamplates/login/index.html`, //login
+		controller: 'loginCtrl'
+	}).when('/home', {
 		templateUrl: `../tamplates/main/index.html`, //main
-		controller: 'mainCtrl'
+		controller: 'homeCtrl'
 	}).when('/myevents', {
 		templateUrl: `../tamplates/myevents/index.html`, //myevents
 		controller: 'myEventCtrl'
@@ -32,6 +35,10 @@ eventApp.config(function($routeProvider) {
 
 eventApp.controller('mainCtrl', function($scope) {
 	console.log('main')
+})
+
+eventApp.controller('homeCtrl', function($scope) {
+	console.log('home')
 })
 
 eventApp.controller('myEventCtrl', function($scope) {
@@ -83,7 +90,6 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 	}
 	$scope.btnLogout = function(){
 
-		const { remote } = require('electron')
 		const currentWin = remote.getCurrentWindow()
     const browserWindow = remote.BrowserWindow
     const mainchild = new browserWindow({
@@ -120,6 +126,23 @@ eventApp.controller('err404Ctrl', function($scope) {
 
 eventApp.controller('loginCtrl', function($scope) {
 	console.log('login')
+	$scope.login = function(){
+		const BrowserWindow = remote.BrowserWindow
+		const loginchild = new BrowserWindow({
+			width: 1200,
+			height: 700,
+			maximizable: true,
+			frame: true,
+			show: false
+		})
+
+		loginchild.once('ready-to-show', () => {
+			loginchild.show()
+			loginchild.focus()
+		})
+
+		loginchild.loadURL(`file://${path.join(__dirname, '..')}/main/index.html`)
+	}
 })
 
 eventApp.controller('notfiCtrl', function($scope) {
