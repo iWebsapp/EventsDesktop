@@ -3,7 +3,7 @@
 const { app, BrowserWindow } = require('electron')
 const devTools = require('./devtools')
 const handleErrors = require('./handle-errors')
-const { remote } = require('electron')
+const remote = require('electron').remote
 var win = ''
 
 if (process.env.NODE_ENV === 'development') {
