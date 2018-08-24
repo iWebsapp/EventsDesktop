@@ -61,7 +61,7 @@ eventApp.controller('profileCtrl', function($scope) {
 	console.log('profiles')
 })
 
-eventApp.controller('menuCtrl', function($scope, $location) {
+eventApp.controller('menuCtrl', ['$scope', '$location', 'config', function($scope, $location, config) {
 	$scope.btnProfile = function(){
 		$location.path('/profile')
 	}
@@ -90,6 +90,7 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 	}
 	$scope.btnLogout = function(){
 
+		config.removeStorage()
 		const currentWin = remote.getCurrentWindow()
     const browserWindow = remote.BrowserWindow
     const mainchild = new browserWindow({
@@ -110,7 +111,7 @@ eventApp.controller('menuCtrl', function($scope, $location) {
 
 	}
 
-})
+}])
 
 eventApp.controller('headerCtrl', function($scope) {
 	console.log('header')
@@ -124,9 +125,17 @@ eventApp.controller('err404Ctrl', function($scope) {
 	console.log('error 404')
 })
 
-eventApp.controller('loginCtrl', function($scope) {
-	console.log('login')
+eventApp.controller('loginCtrl', ['$scope', '$location', 'config', function($scope, $location, config) {
+
+	if( config.storage() == undefined || config.storage() == '' ){
+		$location.path('/')
+	} else {
+		$location.path('/home')
+	}
+
 	$scope.login = function(){
+
+		config.addStorage('l0g1nsuc533')
 		const BrowserWindow = remote.BrowserWindow
 		const loginchild = new BrowserWindow({
 			width: 1200,
@@ -143,8 +152,34 @@ eventApp.controller('loginCtrl', function($scope) {
 
 		loginchild.loadURL(`file://${path.join(__dirname, '..')}/main/index.html`)
 	}
-})
+}])
 
 eventApp.controller('notfiCtrl', function($scope) {
 	console.log('notfiCtrl')
 })
+
+eventApp.factory('config', ['$location', function($location) {
+	var setting = {
+		token_name: function(){
+			return process.env.TOKEN_NAME || 'Authentication'
+		},
+		urlGobal: function(){
+			return process.env.LINK_API || 'localhost:2715/api/v1/'
+		},
+		name_app: function(){
+			return process.env.NAME || 'EventApi'
+		},
+		storage: function(){
+			return localStorage["Authentication"]
+		},
+		addStorage: function(data){
+			localStorage["Authentication"] = ''
+			localStorage["Authentication"] = data
+		},
+		removeStorage: function(){
+			localStorage["Authentication"] = ''
+		}
+	}
+
+	return setting
+}])
