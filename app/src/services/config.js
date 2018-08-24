@@ -23,7 +23,7 @@ eventApp.factory('config', ['$location', function($location) {
 		},
 		getUserData: function () {
 				try{
-						var token = localStorage[API.token_name];
+						var token = localStorage["Authentication"];
 						if (token === '') return;
 
 						var base64Url = token.split('.')[1];
@@ -35,11 +35,11 @@ eventApp.factory('config', ['$location', function($location) {
 				}
 		},
 		hasToken: function () {
-				return (localStorage[API.token_name] !== '');
+				return (localStorage["Authentication"] !== '');
 		},
 		logout: function () {
-				localStorage[API.token_name] = '';
-				$location.path('/login');
+				localStorage["Authentication"] = '';
+				$location.path('/');
 		}
 	}
 

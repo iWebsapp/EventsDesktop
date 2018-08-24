@@ -1,32 +1,32 @@
 var eventApp = angular.module('ServicesApi', []);
 
-eventApp.service('restApi', ['$http', 'auth', function ($http, auth) {
-    this.call = function (config) {
+eventApp.service('restApi', ['$http', 'config', function ($http, config) {
+    this.call = function (conf) {
         var headers = {};
-        headers[API.token_name] = auth.getToken();
+        headers[config.token_name()] = config.getToken();
 
-        var http_config = {
-            method: config.method,
-            url: API.base_url + config.url,
-            data: typeof (config.data) === 'undefined' ? null : config.data,
+        var http_conf = {
+            method: conf.method,
+            url: config.urlGobal() + conf.url,
+            data: typeof (conf.data) === 'undefined' ? null : conf.data,
             headers: headers
         };
 
-        $http(http_config).then(function successCallback(response) {
+        $http(http_conf).then(function successCallback(response) {
 
-            config.response(response.data);
+            conf.response(response.data);
         }, function errorCallback(response) {
 
 
             switch (response.status) {
                 case 401: // No autorizado
-                    auth.logout();
+                    config.logout();
                     break;
                 case 422: // Validación
-                    config.validationError(response.data);
+                    conf.validationError(response.data);
                     break;
                 default:
-                    config.error(response);
+                    conf.error(response);
                     console.log(response.statusText);
                     break;
             }
