@@ -7,6 +7,9 @@ eventApp.config(['$routeProvider', '$locationProvider',  function($routeProvider
 	}).when('/home', {
 		templateUrl: `../tamplates/main/index.html`, //main
 		controller: 'homeCtrl'
+	}).when('/myevents/new', {
+		templateUrl: `../tamplates/newevent/index.html`, //myevents
+		controller: 'newEventCtrl'
 	}).when('/myevents', {
 		templateUrl: `../tamplates/myevents/index.html`, //myevents
 		controller: 'myEventCtrl'

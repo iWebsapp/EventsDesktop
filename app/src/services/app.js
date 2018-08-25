@@ -1,3 +1,3 @@
 var frontApp = angular.module('eventApp', ['ngRoute', 'Router', 'Config', 'ServicesApi', 'err404Ctrl', 'favoritesCtrl',
-'footerCtrl', 'headerCtrl', 'homeCtrl', 'LoginCtrl', 'mainCtrl', 'mapCtrl', 'menuCtrl', 'myEventCtrl',
+'footerCtrl', 'headerCtrl', 'homeCtrl', 'LoginCtrl', 'mainCtrl', 'mapCtrl', 'menuCtrl', 'myEventCtrl', 'newEventCtrl', 
 'notfiCtrl', 'profileCtrl', 'settingsCtrl'])
