@@ -6,9 +6,14 @@ var eventApp = angular.module('LoginCtrl', [])
 eventApp.controller('loginCtrl', ['$scope', '$location', 'config', 'restApi', function($scope, $location, config, restApi) {
 
 	if( config.storage() == undefined || config.storage() == '' ){
-		$location.path('/')
+			$location.path('/')
 	} else {
-		$location.path('/home')
+		if( config.storageWinNewEvnt() == undefined || config.storageWinNewEvnt() == '' ){
+			$location.path('/home')
+		} else {
+			$location.path('/myevents/new')
+			config.removeStorageWinNewEvnt()
+		}
 	}
 
 	$scope.clean = function(){
@@ -17,9 +22,8 @@ eventApp.controller('loginCtrl', ['$scope', '$location', 'config', 'restApi', fu
 			password: undefined
 		}
 	}
-  $scope.titleWin = config.name_app() + 'Bienvenido'
 
-
+	$scope.clean()
 
 	$scope.login = function(){
 
@@ -34,7 +38,7 @@ eventApp.controller('loginCtrl', ['$scope', '$location', 'config', 'restApi', fu
 				url: 'users/login',
 				data: data,
 				response: function (resp) {
-					
+
 					if( resp.status == 200 ){
 
 						config.addStorage(resp.token)

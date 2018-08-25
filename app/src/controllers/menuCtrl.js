@@ -32,6 +32,7 @@ eventApp.controller('menuCtrl', ['$scope', '$location', 'config', function($scop
 	$scope.btnLogout = function(){
 
 		config.removeStorage()
+		config.removeStorageWinNewEvnt()
 		const currentWin = remote.getCurrentWindow()
     const browserWindow = remote.BrowserWindow
     const mainchild = new browserWindow({

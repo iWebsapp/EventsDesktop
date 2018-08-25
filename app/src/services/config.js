@@ -40,6 +40,16 @@ eventApp.factory('config', ['$location', function($location) {
 		logout: function () {
 				localStorage["Authentication"] = '';
 				$location.path('/');
+		},
+		storageWinNewEvnt: function(){
+			return localStorage["newEvent"]
+		},
+		addStorageWinNewEvnt: function(data){
+			localStorage["newEvent"] = ''
+			localStorage["newEvent"] = data
+		},
+		removeStorageWinNewEvnt: function(){
+			localStorage["newEvent"] = ''
 		}
 	}
 
