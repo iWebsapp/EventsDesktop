@@ -60,6 +60,27 @@
 }
 
 .nati-active{
-    background: #d9ebfe;
-    border-radius: 5px;
+  background: #d9ebfe;
+  border-radius: 5px;
+}
+
+.form-group label{
+  font-size: 15px;
+}
+
+.form-group p{
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 500px)  {
+  *{
+    background: #f9fafb;
+  }
+  .header-container{
+    display: none !important;
+  }
+  .form-newevet{
+    display: block;
+    margin-top: -67px;
+  }
 }

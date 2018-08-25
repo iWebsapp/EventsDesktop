@@ -8,8 +8,8 @@ eventApp.controller('myEventCtrl', ['$scope', '$location', 'config', 'restApi', 
 
 		const BrowserWindow = remote.BrowserWindow
 		const loginchild = new BrowserWindow({
-			width: 500,
-	    height: 300,
+			width: 300,
+	    height: 500,
 			maximizable: true,
 			frame: true,
 			show: false

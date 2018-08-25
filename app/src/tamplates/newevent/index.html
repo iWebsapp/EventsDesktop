@@ -1,2 +1,57 @@
-<h2>Nuevo evento</h2>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<form class="form-newevet">
+  <h2>Nuevo evento</h2>
+  <div class="form-group">
+    <label>Nombre del negocio:</label>
+    <input type="email" class="form-control" placeholder="Nombre del local o empresa">
+  </div>
+  <div class="form-group">
+    <label>Foto de tu negocio:</label>
+    <p>Esta imagen aparecerá como marcador en el mapa</p>
+    <input type="file" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Número telefónico:</label>
+    <input type="password" class="form-control" placeholder="Número telefónico">
+  </div>
+  <div class="form-group">
+    <label>Número de celular:</label>
+    <input type="password" class="form-control" placeholder="Número de celular">
+  </div>
+  <div class="form-group">
+    <label>Correo electrónico:</label>
+    <input type="password" class="form-control" placeholder="Correo electrónico">
+  </div>
+  <div class="form-group">
+    <label>Sitio web:</label>
+    <input type="password" class="form-control" placeholder="Sitio web">
+  </div>
+  <div class="form-group">
+    <label>Facebook:</label>
+    <input type="password" class="form-control" placeholder="Facebook">
+  </div>
+  <div class="form-group">
+    <label>Twitter:</label>
+    <input type="password" class="form-control" placeholder="Twitter">
+  </div>
+  <div class="form-group">
+    <label>Instagram:</label>
+    <input type="password" class="form-control" placeholder="Instagram">
+  </div>
+  <div class="form-group">
+    <label>Servicios:</label>
+    <p>Cada servicio que cuentes debes separarlo por una "," ( valet parking, buffet )</p>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Descripción de tu negocio:</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Dirrección de tu negocio:</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+  <div class="form-actions">
+    <button ng-click="cancelEvent()" class="btn btn-form btn-negative">Cancelar</button>
+    <button ng-click="newEvent()" class="btn btn-form btn-primary">Crear evento</button>
+  </div>
+</form>
