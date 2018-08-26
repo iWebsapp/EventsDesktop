@@ -72,6 +72,33 @@
   font-size: 12px;
 }
 
+.form-hour{
+  display: inline-block !important;
+  width: 49% !important;
+  margin-bottom: 5px;
+}
+
+textarea{
+  resize: both;
+}
+
+.form-file{
+  background: none !important;
+  border: none !important;
+  color: transparent !important;
+}
+
+.img-table{
+  display: block;
+  width: 90px;
+  margin-right: 10px;
+}
+
+.img-table img{
+  display: block;
+  width: 100%;
+}
+
 @media only screen and (max-width: 500px)  {
   *{
     background: #f9fafb;

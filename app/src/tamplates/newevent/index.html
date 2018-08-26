@@ -1,57 +1,69 @@
-<form class="form-newevet">
+<form role="form" name="formNewEvent" class="form-newevet" enctype="multipart/form-data">
   <h2>Nuevo evento</h2>
+  <p>Los campos que * son obligatorios:</p>
   <div class="form-group">
-    <label>Nombre del negocio:</label>
-    <input type="email" class="form-control" placeholder="Nombre del local o empresa">
+    <label>Nombre del negocio:*</label>
+    <input type="text" class="form-control" placeholder="Nombre del local o empresa" ng-model="newevet.name" required minlength="5">
   </div>
   <div class="form-group">
-    <label>Foto de tu negocio:</label>
+    <label>Foto de tu negocio:* </label>
     <p>Esta imagen aparecerá como marcador en el mapa</p>
-    <input type="file" class="form-control">
+    <input type="file" class="form-control form-file" required uploader-model="newevet.picture">
+  </div>
+  <div class="form-group">
+    <label>Servicios:*</label>
+    <p>Cada servicio que cuentes debes separarlo por una "," ( valet parking, buffet )</p>
+    <textarea class="form-control" rows="3" ng-model="newevet.services" required minlength="5"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Descripción de tu negocio:*</label>
+    <textarea class="form-control" rows="3" ng-model="newevet.description" required minlength="5"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Dirrección de tu negocio:*</label>
+    <textarea class="form-control" rows="3" ng-model="newevet.addreess" required minlength="5"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Seleciona un horario:</label>
+    <p>Coloca el horario de cada dia que deseas. ejemplo el Lunes : "7:00 am - 3:00 pm"</p>
+    <input type="text" class="form-control form-hour" placeholder="Lunes" minlength="5" ng-model="newevet.monday">
+    <input type="text" class="form-control form-hour" placeholder="Martes" minlength="5" ng-model="newevet.tuesday">
+    <input type="text" class="form-control form-hour" placeholder="Miercoles" minlength="5" ng-model="newevet.wednesday">
+    <input type="text" class="form-control form-hour" placeholder="Jueves" minlength="5" ng-model="newevet.thursday">
+    <input type="text" class="form-control form-hour" placeholder="Viernes" minlength="5" ng-model="newevet.friday">
+    <input type="text" class="form-control form-hour" placeholder="Sábado" minlength="5" ng-model="newevet.saturday">
+    <input type="text" class="form-control form-hour" placeholder="Domingo" minlength="5" ng-model="newevet.sunday">
   </div>
   <div class="form-group">
     <label>Número telefónico:</label>
-    <input type="password" class="form-control" placeholder="Número telefónico">
+    <input type="text" class="form-control" placeholder="Número telefónico" ng-model="newevet.phone"  minlength="10">
   </div>
   <div class="form-group">
     <label>Número de celular:</label>
-    <input type="password" class="form-control" placeholder="Número de celular">
+    <input type="text" class="form-control" placeholder="Número de celular" ng-model="newevet.cellphone"  minlength="10">
   </div>
   <div class="form-group">
     <label>Correo electrónico:</label>
-    <input type="password" class="form-control" placeholder="Correo electrónico">
+    <input type="email" class="form-control" placeholder="Correo electrónico" ng-model="newevet.email"  minlength="5">
   </div>
   <div class="form-group">
     <label>Sitio web:</label>
-    <input type="password" class="form-control" placeholder="Sitio web">
+    <input type="text" class="form-control" placeholder="Sitio web" ng-model="newevet.site"  minlength="8">
   </div>
   <div class="form-group">
     <label>Facebook:</label>
-    <input type="password" class="form-control" placeholder="Facebook">
+    <input type="text" class="form-control" placeholder="Facebook" ng-model="newevet.facebook"  minlength="5">
   </div>
   <div class="form-group">
     <label>Twitter:</label>
-    <input type="password" class="form-control" placeholder="Twitter">
+    <input type="text" class="form-control" placeholder="Twitter" ng-model="newevet.twtter"  minlength="5">
   </div>
   <div class="form-group">
     <label>Instagram:</label>
-    <input type="password" class="form-control" placeholder="Instagram">
-  </div>
-  <div class="form-group">
-    <label>Servicios:</label>
-    <p>Cada servicio que cuentes debes separarlo por una "," ( valet parking, buffet )</p>
-    <textarea class="form-control" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-    <label>Descripción de tu negocio:</label>
-    <textarea class="form-control" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-    <label>Dirrección de tu negocio:</label>
-    <textarea class="form-control" rows="3"></textarea>
+    <input type="text" class="form-control" placeholder="Instagram" ng-model="newevet.instagram"  minlength="5">
   </div>
   <div class="form-actions">
     <button ng-click="cancelEvent()" class="btn btn-form btn-negative">Cancelar</button>
-    <button ng-click="newEvent()" class="btn btn-form btn-primary">Crear evento</button>
+    <button ng-disabled="formNewEvent.$invalid" ng-click="newEvent()" class="btn btn-form btn-primary">Crear evento</button>
   </div>
 </form>

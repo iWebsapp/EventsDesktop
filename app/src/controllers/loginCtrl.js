@@ -92,6 +92,16 @@ eventApp.controller('loginCtrl', ['$scope', '$location', 'config', 'restApi', fu
 				    })
 					}
 
+					if(error.status == 401){
+						const win = remote.getCurrentWindow()
+						$scope.newevet.name = undefined
+						dialog.showMessageBox(win, {
+				      type: 'error',
+				      title: config.name_app(),
+				      message: 'Accesso restringido'
+				    })
+					}
+
 				},
 				validationError: function (validerror) {
 					console.log('Error de autenticacion: ', validerror)

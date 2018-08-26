@@ -10,6 +10,9 @@ eventApp.config(['$routeProvider', '$locationProvider',  function($routeProvider
 	}).when('/myevents/new', {
 		templateUrl: `../tamplates/newevent/index.html`, //myevents
 		controller: 'newEventCtrl'
+	}).when('/myevents/edit/:id', {
+		templateUrl: `../tamplates/newevent/index.html`, //myevents
+		controller: 'newEventCtrl'
 	}).when('/myevents', {
 		templateUrl: `../tamplates/myevents/index.html`, //myevents
 		controller: 'myEventCtrl'

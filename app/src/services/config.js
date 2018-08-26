@@ -3,7 +3,7 @@ var eventApp = angular.module('Config', []);
 eventApp.factory('config', ['$location', function($location) {
 	var setting = {
 		token_name: function(){
-			return process.env.TOKEN_NAME || 'Authentication'
+			return process.env.TOKEN_NAME || 'Authorization'
 		},
 		urlGobal: function(){
 			return process.env.LINK_API || 'http://192.168.0.111:2715/api/v1/'
@@ -12,18 +12,18 @@ eventApp.factory('config', ['$location', function($location) {
 			return process.env.NAME || 'EventApi'
 		},
 		storage: function(){
-			return localStorage["Authentication"]
+			return localStorage["Authorization"]
 		},
 		addStorage: function(data){
-			localStorage["Authentication"] = ''
-			localStorage["Authentication"] = data
+			localStorage["Authorization"] = ''
+			localStorage["Authorization"] = data
 		},
 		removeStorage: function(){
-			localStorage["Authentication"] = ''
+			localStorage["Authorization"] = ''
 		},
 		getUserData: function () {
 				try{
-						var token = localStorage["Authentication"];
+						var token = localStorage["Authorization"];
 						if (token === '') return;
 
 						var base64Url = token.split('.')[1];
@@ -35,10 +35,10 @@ eventApp.factory('config', ['$location', function($location) {
 				}
 		},
 		hasToken: function () {
-				return (localStorage["Authentication"] !== '');
+				return (localStorage["Authorization"] !== '');
 		},
 		logout: function () {
-				localStorage["Authentication"] = '';
+				localStorage["Authorization"] = '';
 				$location.path('/');
 		},
 		storageWinNewEvnt: function(){
